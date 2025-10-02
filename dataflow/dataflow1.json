@@ -61,7 +61,8 @@
 				"     skipDuplicateMapOutputs: true,",
 				"     mapColumn(",
 				"          names_of_files",
-				"     )) ~> sink1"
+				"     ),",
+				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
 	}
