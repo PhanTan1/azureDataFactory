@@ -45,9 +45,9 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 foldDown(unroll(names_of_files),",
+				"select1 foldDown(unroll(names_of_files, names_of_files),",
 				"     mapColumn(",
-				"          column1 = names_of_files",
+				"          names_of_files",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> flatten1",
@@ -56,10 +56,11 @@
 				"     input(",
 				"          names_of_files as string",
 				"     ),",
+				"     partitionFileNames:['metadata.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     mapColumn(",
-				"          names_of_files = column1",
+				"          names_of_files",
 				"     )) ~> sink1"
 			]
 		}
