@@ -1,0 +1,28 @@
+{
+	"name": "metadata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sakilaBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "metadata.csv",
+				"container": "sakila"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "names_of_files",
+				"type": "String"
+			}
+		]
+	}
+}

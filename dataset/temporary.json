@@ -1,0 +1,28 @@
+{
+	"name": "temporary",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sakilaBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "temporary.csv",
+				"container": "sakila"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "dummy",
+				"type": "String"
+			}
+		]
+	}
+}

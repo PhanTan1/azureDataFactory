@@ -1,0 +1,40 @@
+{
+	"name": "sakila_csvs",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sakilaBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "sakilacsv",
+				"container": "sakila"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "actor_id",
+				"type": "String"
+			},
+			{
+				"name": "first_name",
+				"type": "String"
+			},
+			{
+				"name": "last_name",
+				"type": "String"
+			},
+			{
+				"name": "last_update",
+				"type": "String"
+			}
+		]
+	}
+}
