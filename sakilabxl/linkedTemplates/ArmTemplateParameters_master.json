@@ -8,6 +8,18 @@
 		"sakilaBlobStorage_connectionString": {
 			"value": ""
 		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "sakila1.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "test"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "tan123"
+		},
 		"containerUri": {
 			"value": ""
 		},
