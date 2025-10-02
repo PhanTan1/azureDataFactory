@@ -1,19 +1,23 @@
 {
-	"name": "dataflow2",
+	"name": "from_csv_to_sql",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "DelimitedText2",
-						"type": "DatasetReference"
+					"linkedService": {
+						"referenceName": "sakilaBlobStorage",
+						"type": "LinkedServiceReference"
 					},
 					"name": "source1"
 				}
 			],
 			"sinks": [
 				{
+					"linkedService": {
+						"referenceName": "AzureSqlDatabase1",
+						"type": "LinkedServiceReference"
+					},
 					"name": "sink1"
 				}
 			],
@@ -22,13 +26,32 @@
 				"parameters{",
 				"     table_name as string (\"dummy\")",
 				"}",
-				"source(allowSchemaDrift: true,",
+				"source(useSchema: false,",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'delimited',",
+				"     container: 'sakila',",
+				"     folderPath: 'sakilacsv',",
+				"     fileName: (concat($table_name,'.csv')),",
+				"     columnDelimiter: ',',",
+				"     escapeChar: '\\\\',",
+				"     quoteChar: '\\\"',",
+				"     columnNamesAsHeader: true) ~> source1",
 				"source1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     format: 'table',",
+				"     store: 'sqlserver',",
+				"     schemaName: 'dbo',",
+				"     tableName: '$table_name',",
+				"     insertable: true,",
+				"     updateable: false,",
+				"     deletable: false,",
+				"     upsertable: false,",
+				"     recreate: true,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
 			]
 		}
 	}
