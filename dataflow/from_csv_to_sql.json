@@ -5,9 +5,9 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "sakila_csvs",
-						"type": "DatasetReference"
+					"linkedService": {
+						"referenceName": "AzureBlobStorage1",
+						"type": "LinkedServiceReference"
 					},
 					"name": "source1"
 				}
@@ -26,15 +26,18 @@
 				"parameters{",
 				"     table_name as string (\"dummy\")",
 				"}",
-				"source(output(",
-				"          actor_id as string,",
-				"          first_name as string,",
-				"          last_name as string,",
-				"          last_update as string",
-				"     ),",
+				"source(useSchema: false,",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'delimited',",
+				"     container: 'sakila',",
+				"     folderPath: 'sakila',",
+				"     fileName: 'concat($tablename,\\'csv\\')',",
+				"     columnDelimiter: ',',",
+				"     escapeChar: '\\\\',",
+				"     quoteChar: '\\\"',",
+				"     columnNamesAsHeader: false) ~> source1",
 				"source1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'table',",
