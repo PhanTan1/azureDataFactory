@@ -24,7 +24,7 @@
 			"transformations": [],
 			"scriptLines": [
 				"parameters{",
-				"     tablename as string (\"dummy\")",
+				"     table_name as string (\"dummy\")",
 				"}",
 				"source(useSchema: false,",
 				"     allowSchemaDrift: true,",
@@ -33,7 +33,7 @@
 				"     format: 'delimited',",
 				"     container: 'sakila',",
 				"     folderPath: 'sakila',",
-				"     fileName: (concat($tablename,'.csv')),",
+				"     fileName: (concat($table_name,'.csv')),",
 				"     columnDelimiter: ',',",
 				"     escapeChar: '\\\\',",
 				"     quoteChar: '\\\"',",
