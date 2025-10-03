@@ -33,6 +33,10 @@
 				}
 			],
 			"scriptLines": [
+				"parameters{",
+				"     PIPEVAR_table_name_CSV as string ('actor_CSV'),",
+				"     PIPEVAR_table_nameeter1 as string ('actor')",
+				"}",
 				"source(output(",
 				"          actor_id as string,",
 				"          first_name as string,",
