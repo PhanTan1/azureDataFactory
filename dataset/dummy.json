@@ -2,7 +2,7 @@
 	"name": "dummy",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "sakilaBlobStorage",
+			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],

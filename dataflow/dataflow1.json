@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DelimitedText1",
+						"referenceName": "sakila_csvs",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -34,7 +34,10 @@
 			],
 			"scriptLines": [
 				"source(output(",
-				"          names_of_files as string",
+				"          actor_id as string,",
+				"          first_name as string,",
+				"          last_name as string,",
+				"          last_update as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
