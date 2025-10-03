@@ -82,7 +82,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@split(variables('PIPEVAR_table_name_CSV'),'.csv')[0]",
+									"value": "@and(endswith(variables('PIPEVAR_table_name_CSV'),'.csv'), not(equals(item().name, 'dummy.csv')))",
 									"type": "Expression"
 								},
 								"ifTrueActivities": [
