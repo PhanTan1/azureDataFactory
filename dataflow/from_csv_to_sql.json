@@ -43,7 +43,7 @@
 				"     format: 'table',",
 				"     store: 'sqlserver',",
 				"     schemaName: 'dbo',",
-				"     tableName: '$tablename',",
+				"     tableName: ($table_name),",
 				"     insertable: true,",
 				"     updateable: false,",
 				"     deletable: false,",
