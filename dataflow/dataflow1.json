@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "sakila_csvs",
+						"referenceName": "metadata",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -38,10 +38,7 @@
 				"     PIPEVAR_table_nameeter1 as string ('actor')",
 				"}",
 				"source(output(",
-				"          actor_id as string,",
-				"          first_name as string,",
-				"          last_name as string,",
-				"          last_update as string",
+				"          names_of_files as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
