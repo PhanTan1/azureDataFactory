@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"linkedService": {
-						"referenceName": "sakilaBlobStorage",
+						"referenceName": "AzureBlobStorage1",
 						"type": "LinkedServiceReference"
 					},
 					"name": "source1"
@@ -31,7 +31,6 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'delimited',",
-				"     container: 'sakila',",
 				"     folderPath: 'sakilacsv',",
 				"     fileName: (concat($table_name,'.csv')),",
 				"     columnDelimiter: ',',",
