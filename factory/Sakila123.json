@@ -1,0 +1,9 @@
+{
+	"name": "Sakila123",
+	"location": "germanywestcentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d5f4bcbe-d074-4bc9-a875-52e51dca83ce",
+		"tenantId": "72db22d5-53b6-493c-bbb2-f36644f1f812"
+	}
+}
