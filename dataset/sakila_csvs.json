@@ -2,7 +2,7 @@
 	"name": "sakila_csvs",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "sakilaBlobStorage",
+			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "sakilacsv",
+				"folderPath": "sakila",
 				"container": "sakila"
 			},
 			"columnDelimiter": ",",

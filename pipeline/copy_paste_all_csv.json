@@ -24,6 +24,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -96,7 +97,10 @@
 										"userProperties": [],
 										"typeProperties": {
 											"variableName": "PIPEVAR_table_name",
-											"value": "@split(variables('PIPEVAR_table_name_CSV'),'.csv')[0]"
+											"value": {
+												"value": "@split(variables('PIPEVAR_table_name_CSV'),'.csv')[0]",
+												"type": "Expression"
+											}
 										}
 									},
 									{
