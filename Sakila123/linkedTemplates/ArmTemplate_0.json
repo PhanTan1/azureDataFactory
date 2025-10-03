@@ -409,6 +409,7 @@
 						"     format: 'delimited',",
 						"     container: 'sakila',",
 						"     folderPath: 'sakila',",
+						"     fileName: 'concat($tablename,\\'.csv\\')',",
 						"     columnDelimiter: ',',",
 						"     escapeChar: '\\\\',",
 						"     quoteChar: '\\\"',",
